@@ -1,3 +1,8 @@
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
+const results = document.querySelector("#results");
+
 function getComputerChoice(){
     let choice = Math.round(Math.random() * 2);
     switch(choice){
@@ -19,42 +24,38 @@ function playRound(humanChoice, computerChoice){
     switch(humanChoice){
         case "rock": 
             if(computerChoice == "paper"){
-                console.log(`YOU LOSE! ${computerChoice} beats ${humanChoice}`)
+                results.textContent = `YOU LOSE! ${computerChoice} beats ${humanChoice}`;
             }
             else if(computerChoice == "scissors"){
-                console.log(`YOU WIN! ${humanChoice} beats ${computerChoice}`)
+                results.textContent = `YOU WIN! ${humanChoice} beats ${computerChoice}`;
             }
             else
-                console.log("TIED!")
+                results.textContent = "TIED!";
         break;
 
         case "paper":
             if(computerChoice == "scissors"){
-                console.log(`YOU LOSE! ${computerChoice} beats ${humanChoice}`)
+                results.textContent = `YOU LOSE! ${computerChoice} beats ${humanChoice}`;
             }
             else if(computerChoice == "rock"){
-                console.log(`YOU WIN! ${humanChoice} beats ${computerChoice}`)
+                results.textContent = `YOU WIN! ${humanChoice} beats ${computerChoice}`;
             }
             else
-                console.log("TIED!")
+                results.textContent = "TIED!";
         break;
 
         case "scissors":
             if(computerChoice == "rock"){
-                console.log(`YOU LOSE! ${computerChoice} beats ${humanChoice}`)
+                results.textContent = `YOU LOSE! ${computerChoice} beats ${humanChoice}`;
             }
             else if(computerChoice == "paper"){
-                console.log(`YOU WIN! ${humanChoice} beats ${computerChoice}`)
+                results.textContent = `YOU WIN! ${humanChoice} beats ${computerChoice}`;
             }
             else
-                console.log("TIED!")
+                results.textContent = "TIED!";
         break;
     }
 }
-
-const rock = document.querySelector("#rock");
-const paper = document.querySelector("#paper");
-const scissors = document.querySelector("#scissors");
 
 rock.addEventListener("click", () => playRound("rock", getComputerChoice()))
 paper.addEventListener("click", () => playRound("paper", getComputerChoice()))
