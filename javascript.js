@@ -19,11 +19,9 @@ function playRound(humanChoice, computerChoice){
     switch(humanChoice){
         case "rock": 
             if(computerChoice == "paper"){
-                computerScore++;
                 console.log(`YOU LOSE! ${computerChoice} beats ${humanChoice}`)
             }
             else if(computerChoice == "scissors"){
-                humanScore++;
                 console.log(`YOU WIN! ${humanChoice} beats ${computerChoice}`)
             }
             else
@@ -32,11 +30,9 @@ function playRound(humanChoice, computerChoice){
 
         case "paper":
             if(computerChoice == "scissors"){
-                computerScore++;
                 console.log(`YOU LOSE! ${computerChoice} beats ${humanChoice}`)
             }
             else if(computerChoice == "rock"){
-                humanScore++;
                 console.log(`YOU WIN! ${humanChoice} beats ${computerChoice}`)
             }
             else
@@ -45,11 +41,9 @@ function playRound(humanChoice, computerChoice){
 
         case "scissors":
             if(computerChoice == "rock"){
-                computerScore++;
                 console.log(`YOU LOSE! ${computerChoice} beats ${humanChoice}`)
             }
             else if(computerChoice == "paper"){
-                humanScore++;
                 console.log(`YOU WIN! ${humanChoice} beats ${computerChoice}`)
             }
             else
@@ -62,6 +56,6 @@ const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
 
-rock.addEventListener("click", playRound("rock", getComputerChoice()))
-paper.addEventListener("click", playRound("paper", getComputerChoice()))
-scissors.addEventListener("click", playRound("scissors", getComputerChoice()))
+rock.addEventListener("click", () => playRound("rock", getComputerChoice()))
+paper.addEventListener("click", () => playRound("paper", getComputerChoice()))
+scissors.addEventListener("click", () => playRound("scissors", getComputerChoice()))
